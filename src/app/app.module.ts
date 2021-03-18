@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     BrowserAnimationsModule,
     NgbModule,
     CommonModule,
-    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

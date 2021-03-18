@@ -19,7 +19,6 @@ export class WeatherDetailComponent implements OnInit {
   getForecastDetails(): void {
     this.cityname = this.route.snapshot.params['city'];
     this.weatherService.getForecastDetails(this.cityname).subscribe((response: any) => {
-      console.log(response,'try')
        this.weatherData =  response.list.reduce((obj,data) => {
         if(data.dt_txt.includes("09:00:00")){
           let {dt_txt:date,main:{temp,sea_level}} = data;
@@ -27,7 +26,6 @@ export class WeatherDetailComponent implements OnInit {
          }
         return obj;
       },[])
-      console.log(this.weatherData);
     });
   }
 
