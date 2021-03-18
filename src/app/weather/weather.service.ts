@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { weatherData } from './weather.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +13,11 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getWeatherData(city : string){
+  public getWeatherData(city : string): Observable<any>{
     return this.httpClient.get(this.REST_API_SERVER.replace('{cityname}',city));
   }
 
-  public getForecastDetails(city : string){
+  public getForecastDetails(city : string) : Observable<any>{
     return this.httpClient.get(this.WEATHER_FORECAST.replace('{cityname}',city));
   }
 }

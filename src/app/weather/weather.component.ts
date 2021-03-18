@@ -3,7 +3,7 @@ import { WeatherService } from './weather.service';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-interface weatherData {
+export interface weatherData {
   name: string;
   temp: number;
   sunrise: number;
@@ -26,11 +26,10 @@ export class WeatherComponent implements OnInit {
     forkJoin(
       cities.map(city =>
         this.weatherService.getWeatherData(city).pipe(
-          map((data: any[]) =>  data)
+          map((data) =>  data)
     ).subscribe((response: any) => {
       let {name,main:{temp},sys:{sunrise,sunset}} = response;
-      this.weatherData.push({name,temp,sunrise,sunset})
-      console.log(this.weatherData)
-    })));
+      this.weatherData.push({name,temp: Math.round((temp -273) / 1.8),sunrise,sunset})
+     })));
   }
 }
