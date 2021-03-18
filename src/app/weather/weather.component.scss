@@ -1,0 +1,74 @@
+
+.container {
+	height: 80vh;
+	background-color: yellowgreen;
+	border-color: #ffffff;
+	align-items: center;
+	border-radius: 1rem;
+	vertical-align: middle;
+    min-width: 60vw;
+}
+.weather {
+	width: 77%;
+}
+.card {
+	padding: 1rem;
+	margin: 1.5rem 4vw;
+	border-radius: 1rem;
+	background-color: #ffffff;
+	border-color: rgba(238, 237, 237, 0.22);
+	box-shadow: 5px 6px 6px 2px #e9ecef;
+	text-align: center;
+    cursor: pointer;
+    &:hover {
+       opacity: 0.8;
+    }
+}
+.col-md-6 {
+    &:focus {
+        outline: none;
+    }
+}
+.title {
+	justify-content: center;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	p {
+		margin-bottom: 0.2rem;
+		font-size: 1.2rem;
+	}
+}
+.temp {
+	font-size: 2.6rem;
+	margin-bottom: 1rem;
+}
+.header {
+	color: #dddddd;
+}
+.col-4 {
+	padding: 0 0.2rem;
+}
+.icon {
+	align-self: flex-end;
+	margin-right: -2.5rem;
+	margin-top: -2rem;
+	z-index: 999;
+	img {
+		width: 5rem;
+	}
+}
+@media (max-width:767px) {
+	.container {
+		height: fit-content;
+	}
+	.weather {
+		width: 100%;
+	}
+}
+@media (max-width:768px) {
+	.card {
+		margin: 1.5rem;
+	}
+}

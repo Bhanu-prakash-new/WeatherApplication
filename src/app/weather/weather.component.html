@@ -1,0 +1,24 @@
+<h1 class="text-center">Weather Information of European cities</h1>
+<div class="container d-flex justify-content-center">
+    <div class="weather">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let data of weatherData"  [routerLink]="['/', 'weatherDetail',data.name]">
+                <div class="card"> <span class="icon"><img class="img-fluid" src="https://img.icons8.com/emoji/96/000000/sun-emoji.png" /></span>
+                    <div class="title">
+                        <p>{{ data.name }}</p>
+                    </div>  
+                    <div class="temp">{{data.temp > 0 ? '+ ' : '- '}}{{data.temp}}<sup>&deg;</sup></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="header">Sun Rise</div>
+                            <div class="value">{{data.sunrise | date:'mediumTime'}}</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="header">Sun Set</div>
+                            <div class="value">{{data.sunset | date:'mediumTime'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
